@@ -2,11 +2,231 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon</title>
+    <title>Blog Homepage</title>
+    <style>
+        /* Importing a coding font */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 0;
+            color: #ddd;
+            background-color: #1e1e1e;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #000000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+        .header .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .header .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .header .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .header .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+        .header .nav a:hover {
+            color: #ddd;
+            border-bottom: 2px solid #ddd;
+        }
+        .header .login-signup {
+            font-size: 16px;
+        }
+        .header button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .header button:hover {
+            background-color: #555;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        .welcome {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 40px;
+            background-color: transparent; /* No background */
+        }
+        .welcome .welcome-text {
+            flex: 1;
+            max-width: 50%;
+        }
+        .welcome .welcome-text h2 {
+            font-size: 36px; /* Increased text size */
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .welcome .welcome-text p {
+            font-size: 18px;
+            color: #fff; /* Changed text color to white */
+            margin-bottom: 20px;
+        }
+        .welcome .welcome-image {
+            flex: 1;
+            max-width: 50%;
+            text-align: right;
+        }
+        .welcome .welcome-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .highlight, .blog, .feedback, .about {
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #000000;
+            color: #e0e0e0;
+        }
+        .highlight h2, .blog h2, .feedback h2, .about h2 {
+            font-size: 24px;
+            margin-bottom: 20px; /* Adds space between the heading and content */
+            color: #fff;
+        }
+        .highlight {
+            display: flex;
+            flex-direction: column; /* Stack heading and images vertically */
+            gap: 20px;
+        }
+        .highlight .highlight-images {
+            display: flex;
+            gap: 20px;
+            flex-wrap: nowrap;
+            overflow-x: auto; /* Enables horizontal scrolling */
+        }
+        .highlight .highlight-images img {
+            width: 100%;
+            height: auto;
+            max-width: 300px; /* Set a max width for images to fit like blog posts */
+            max-height: 200px; /* Set a max height */
+            object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+            border-radius: 8px;
+        }
+        .blog-columns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: nowrap;
+            overflow-x: auto; /* Enables horizontal scrolling */
+        }
+        .blog {
+            flex: 1;
+            min-width: 300px;
+            max-width: 300px; /* Set a max width to fit horizontally */
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #000000;
+            color: #e0e0e0;
+            margin-top: 20px;
+        }
+        .blog p {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-   Jadu 
+    <div class="header">
+        <div class="logo">
+            <img src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/05/06230953/ape-by-gert-van-duinen-dribbble.png" alt="Logo">
+            <div class="title">BloGeeks</div>
+        </div>
+        <div class="nav">
+            <a href="#highlights">Highlights</a>
+            <a href="#blogs">Blogs</a>
+            <a href="#feedback">Feedback</a>
+            <a href="#about">About</a>
+        </div>
+        <div class="login-signup">
+            <button onclick="window.location.href='login.html'">Login</button>
+            <button onclick="window.location.href='get-started.html'">Get Started</button>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="welcome">
+            <div class="welcome-text">
+                <h2>Create a blog ☕</h2> <!-- Updated heading -->
+                <p>Share your story with the world. Create a beautiful, personalized blog that fits your brand. Grow your audience.</p>
+                <button onclick="window.location.href='get-started.html'" style="background-color: #333; color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">Get Started</button>
+            </div>
+            <div class="welcome-image">
+                <img src="https://via.placeholder.com/400x300" alt="Welcome Image">
+            </div>
+        </div>
+        <div id="highlights" class="section highlight">
+            <h2>Highlights</h2>
+            <div class="highlight-images">
+                <img src="https://via.placeholder.com/300x200" alt="Highlight Image 1">
+                <img src="https://via.placeholder.com/300x200" alt="Highlight Image 2">
+                <img src="https://via.placeholder.com/300x200" alt="Highlight Image 3">
+                <img src="https://via.placeholder.com/300x200" alt="Highlight Image 4">
+                <img src="https://via.placeholder.com/300x200" alt="Highlight Image 5">
+            </div>
+        </div>
+        <div id="blogs" class="section blog-columns">
+            <div class="blog">
+                <h2>Blog Post 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            </div>
+            <div class="blog">
+                <h2>Blog Post 2</h2>
+                <p>Curabitur sit amet massa bibendum, mollis est a, dictum nulla. Integer sit amet augue fermentum, bibendum lacus ac, elementum velit.</p>
+            </div>
+            <div class="blog">
+                <h2>Blog Post 3</h2>
+                <p>Quisque egestas metus sit amet mauris varius, et ullamcorper nunc bibendum. Ut eget dolor ut velit egestas scelerisque.</p>
+            </div>
+            <div class="blog">
+                <h2>Blog Post 4</h2>
+                <p>Aenean euismod odio eget elit fermentum, id dictum urna tincidunt. Fusce convallis dui et neque cursus, nec venenatis purus bibendum.</p>
+            </div>
+            <div class="blog">
+                <h2>Blog Post 5</h2>
+                <p>Phasellus et libero vel elit bibendum bibendum. Nunc viverra felis a nunc efficitur, ut vehicula eros tincidunt.</p>
+            </div>
+        </div>
+        <div id="feedback" class="section feedback">
+            <h2>Feedback</h2>
+            <p><strong>User 1:</strong> "Great content! The articles are very insightful and well-written."</p>
+            <p><strong>User 2:</strong> "I love the highlights section. It's a nice way to catch up on the most important posts."</p>
+            <p><strong>User 3:</strong> "The blog layout is very user-friendly. The scrolling features are a great addition."</p>
+        </div>
+        <div id="about" class="section about">
+            <h2>About</h2>
+            <p>Created with love by Parag And Paramveer</p>
+            <p>Contact us at: <a href="mailto:contact@example.com" style="color: #ddd;">contact@example.com</a></p>
+        </div>
+    </div>
 </body>
 </html>
