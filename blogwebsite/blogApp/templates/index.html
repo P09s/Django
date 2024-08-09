@@ -109,12 +109,16 @@
             border-radius: 8px;
             background-color: #000000;
             color: #e0e0e0;
-            margin-bottom: 40px; /* Consistent spacing between sections */
         }
         .highlight h2, .blog h2, .feedback h2, .about h2 {
             font-size: 24px;
             margin-bottom: 20px; /* Adds space between the heading and content */
             color: #fff;
+        }
+        .highlight {
+            display: flex;
+            flex-direction: column; /* Stack heading and images vertically */
+            gap: 20px;
         }
         .highlight .highlight-images {
             display: flex;
@@ -125,7 +129,7 @@
         .highlight .highlight-images img {
             width: 100%;
             height: auto;
-            max-width: 300px; /* Set a max width for images to fit like blog posts */
+            max-width: 300px; /* Set a max width for images */
             max-height: 200px; /* Set a max height */
             object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
             border-radius: 8px;
@@ -150,9 +154,17 @@
         .blog p {
             font-size: 16px;
         }
+        .feedback {
+            margin-top: 40px; /* Spacing between blog posts and feedback */
+        }
+        .about {
+            margin-top: 40px; /* Spacing between feedback and about */
+        }
         ::-webkit-scrollbar {
             display: none;
         }
+        
+
     </style>
 </head>
 <body>
