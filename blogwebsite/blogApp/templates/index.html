@@ -8,13 +8,19 @@
         /* Importing a coding font */
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
         body {
             font-family: 'Roboto Mono', monospace;
-            margin: 0;
-            padding: 0;
+            display: flex;
+            flex-direction: column;
             color: #ddd;
             background-color: #1e1e1e;
         }
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -23,23 +29,28 @@
             background-color: #000000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
+
         .header .logo {
             display: flex;
             align-items: center;
         }
+
         .header .logo img {
             height: 60px;
             margin-right: 10px;
         }
+
         .header .title {
             font-size: 24px;
             font-weight: bold;
             color: #fff;
         }
+
         .header .nav {
             display: flex;
             gap: 20px;
         }
+
         .header .nav a {
             color: #fff;
             text-decoration: none;
@@ -48,13 +59,16 @@
             border-bottom: 2px solid transparent;
             transition: color 0.3s ease, border-bottom 0.3s ease;
         }
+
         .header .nav a:hover {
             color: #ddd;
             border-bottom: 2px solid #ddd;
         }
+
         .header .login-signup {
             font-size: 16px;
         }
+
         .header button {
             background-color: #333;
             color: #fff;
@@ -65,12 +79,18 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+
         .header button:hover {
             background-color: #555;
         }
+
         .main-content {
+            flex: 1;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
         }
+
         .welcome {
             display: flex;
             justify-content: space-between;
@@ -79,30 +99,37 @@
             margin-bottom: 40px;
             background-color: transparent; /* No background */
         }
+
         .welcome .welcome-text {
             flex: 1;
             max-width: 50%;
         }
+
         .welcome .welcome-text h2 {
             font-size: 36px; /* Increased text size */
             margin-bottom: 10px;
             color: #fff;
         }
+
         .welcome .welcome-text p {
             font-size: 18px;
             color: #fff; /* Changed text color to white */
             margin-bottom: 20px;
         }
+
         .welcome .welcome-image {
             flex: 1;
             max-width: 50%;
             text-align: right;
         }
+
         .welcome .welcome-image img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
+            border: 1px solid #ddd; /* Add border around image */
         }
+
         .highlight, .blog, .feedback, .about {
             padding: 20px;
             border: 1px solid #333;
@@ -110,22 +137,26 @@
             background-color: #000000;
             color: #e0e0e0;
         }
+
         .highlight h2, .blog h2, .feedback h2, .about h2 {
             font-size: 24px;
             margin-bottom: 20px; /* Adds space between the heading and content */
             color: #fff;
         }
+
         .highlight {
             display: flex;
             flex-direction: column; /* Stack heading and images vertically */
             gap: 20px;
         }
+
         .highlight .highlight-images {
             display: flex;
             gap: 20px;
             flex-wrap: nowrap;
             overflow-x: auto; /* Enables horizontal scrolling */
         }
+
         .highlight .highlight-images img {
             width: 100%;
             height: auto;
@@ -134,12 +165,14 @@
             object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
             border-radius: 8px;
         }
+
         .blog-columns {
             display: flex;
             gap: 20px;
             flex-wrap: nowrap;
             overflow-x: auto; /* Enables horizontal scrolling */
         }
+
         .blog {
             flex: 1;
             min-width: 300px;
@@ -151,19 +184,27 @@
             color: #e0e0e0;
             margin-top: 20px;
         }
+
         .blog p {
             font-size: 16px;
         }
+
         .feedback {
             margin-top: 40px; /* Spacing between blog posts and feedback */
         }
+
         .about {
-            margin-top: 40px; /* Spacing between feedback and about */
+            border-top: 1px solid #333; /* Optional: add a border on top for separation */
+            padding: 1px;
+            border-radius: 8px;
+            background-color: #000000;
+            color: #e0e0e0;
+            text-align: center; /* Center-align text */
         }
+
         ::-webkit-scrollbar {
             display: none;
         }
-        
 
     </style>
 </head>
@@ -233,11 +274,11 @@
             <p><strong>User 2:</strong> "I love the highlights section. It's a nice way to catch up on the most important posts."</p>
             <p><strong>User 3:</strong> "The blog layout is very user-friendly. The scrolling features are a great addition."</p>
         </div>
-        <div id="about" class="section about">
-            <h2>About</h2>
-            <p>Created with love by Parag And Paramveer</p>
-            <p>Contact us at: <a href="mailto:contact@example.com" style="color: #ddd;">contact@example.com</a></p>
-        </div>
+    </div>
+    <div class="about">
+        <h2>About</h2>
+        <p>Baked with ♥ by "Team Skittles"</p>
+        <p>Contact us at: <a href="mailto:sharmaparag2004@example.com" style="color: #ddd;">contact@example.com</a></p>
     </div>
 </body>
 </html>
