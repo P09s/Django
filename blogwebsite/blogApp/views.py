@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login ,logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth.models import User
 
 def indexV(request):
     return render(request, "index.html")
@@ -29,24 +28,18 @@ def login_user(request):
     return render(request, 'registration/login.html', {'form': form})
 
 def signup_user(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        user_type = request.POST.get('user_type')  # Get the user type from the form
-        if form.is_valid():
-            user = form.save(commit=False)
-            if user_type == 'admin':
-                user.is_staff = True  # Assign staff status for admin-like users
-            # Save the user
-            user.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f"Account created for {username}. Please log in.")
-            return redirect('home1')
-        else:
-            messages.error(request, "Failed to create account. Please correct the errors below.")
-    else:
-        form = UserCreationForm()
-    
+    form = UserCreationForm(request.POST or None)
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+        messages.success(request, f"Account created successfully. Please log in.")
+        return redirect('home1')
+
     return render(request, 'registration/signup.html', {'form': form})
 
 def home(request):
     return render(request, "home.html")
+
+# def logout_user(request):
+#     logout(request)
+#     # messages.success(request, "You have been logged out successfully.")
+#     return redirect('login') 
