@@ -39,7 +39,8 @@ def signup_user(request):
 def home(request):
     return render(request, "home.html")
 
-# def logout_user(request):
-#     logout(request)
-#     # messages.success(request, "You have been logged out successfully.")
-#     return redirect('login') 
+def logout_user(request):
+    logout(request) 
+    messages.success(request, "You have been logged out successfully.")
+    return redirect('login') 
+   
